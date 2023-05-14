@@ -36,7 +36,6 @@ class TestHBNBCommand_prompting(unittest.TestCase):
 class TestHBNBCommand_help(unittest.TestCase):
     """Unittests for testing help messages of the HBNB command interpreter."""
 
-
     def test_help(self):
         h = ("Documented commands (type help <topic>):\n"
              "========================================\n"
@@ -565,7 +564,6 @@ class TestHBNBCommand_update(unittest.TestCase):
         except IOError:
             pass
 
-
     def test_update_missing_id_space_notation(self):
         correct = "** instance id missing **"
         with patch("sys.stdout", new=StringIO()) as output:
@@ -590,7 +588,6 @@ class TestHBNBCommand_update(unittest.TestCase):
             self.assertFalse(HBNBCommand().onecmd("update Review"))
             self.assertEqual(correct, output.getvalue().strip())
 
-
     def test_update_invalid_id_space_notation(self):
         correct = "** no instance found **"
         with patch("sys.stdout", new=StringIO()) as output:
@@ -614,7 +611,6 @@ class TestHBNBCommand_update(unittest.TestCase):
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("update Review 1"))
             self.assertEqual(correct, output.getvalue().strip())
-
 
     def test_update_missing_attr_name_space_notation(self):
         correct = "** attribute name missing **"
@@ -660,7 +656,6 @@ class TestHBNBCommand_update(unittest.TestCase):
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd(testCmd))
             self.assertEqual(correct, output.getvalue().strip())
-
 
     def test_update_missing_attr_value_space_notation(self):
         correct = "** value missing **"
@@ -713,7 +708,6 @@ class TestHBNBCommand_update(unittest.TestCase):
             testCmd = "update Review {} attr_name".format(testId)
             self.assertFalse(HBNBCommand().onecmd(testCmd))
             self.assertEqual(correct, output.getvalue().strip())
-
 
     def test_update_valid_float_attr_space_notation(self):
         with patch("sys.stdout", new=StringIO()) as output:
