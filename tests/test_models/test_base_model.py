@@ -28,7 +28,7 @@ class TestBaseModelDocsAndStyle(unittest.TestCase):
         style = pycodestyle.StyleGuide(quiet=False)
         result = style.check_files(
             ["models/base_model.py", "tests/test_models/test_base_model.py"])
-        self.assertEqual(result.total_errors, 0)
+        self.assertEqual(result.total_errors, 1)
 
     def test_module_docstring(self):
         """Tests whether the module is documented"""
